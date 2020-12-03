@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7.0" type="plugin" group="system" method="upgrade">
+	<name>plg_system_rsformhoneypot</name>
+	<author>Matias Aguirre - Perfect Web Team</author>
+	<creationDate>November 2020</creationDate>
+	<copyright>(C) 2020 https://perfectwebteam.nl</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>matias@perfectwebteam.nl</authorEmail>
+	<authorUrl>perfectwebteam.nl</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[PLG_SYSTEM_RSFORMHONEYPOT_XML_DESCRIPTION]]></description>
+
+	<files>
+		<filename plugin="rsformhoneypot">rsformhoneypot.php</filename>
+		<folder>language</folder>
+	</files>
+</extension>
