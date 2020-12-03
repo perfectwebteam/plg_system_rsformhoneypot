@@ -11,7 +11,26 @@
 	<description><![CDATA[PLG_SYSTEM_RSFORMHONEYPOT_XML_DESCRIPTION]]></description>
 
 	<files>
+		<folder>sql</folder>
 		<filename plugin="rsformhoneypot">rsformhoneypot.php</filename>
 		<folder>language</folder>
 	</files>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/mysql/install.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/mysql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/mysql/updates/</schemapath>
+		</schemas>
+	</update>
 </extension>
