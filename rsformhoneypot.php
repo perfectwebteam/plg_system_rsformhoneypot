@@ -91,16 +91,16 @@ class plgSystemRsformhoneypot extends JPlugin
 		switch ($formLayoutName)
 		{
 			case 'responsive':
-				$newField = '
-			<div class="rsform-block rsform-block-' . $HoneypotName . '">'
-					. '<label class="formControlLabel" for="' . ucfirst($HoneypotName) . '">' . ucfirst($HoneypotName) . '</label>'
-					. '<div class="formControls">'
-					. '<div class="formBody">'
-					. '<input type="text" value="" size="20" name="form[' . $HoneypotName . ']" id="' . ucfirst($HoneypotName) . '" class="rsform-input-box">'
-					. '</div>'
-					. '</div>'
-					. '</div>';
-				break;
+                $newField = "
+			<div class=\"rsform-block rsform-block-" . $HoneypotName . "\">\n"
+                    . "				<label class=\"formControlLabel\" for=\"" . ucfirst($HoneypotName) . "\">" . ucfirst($HoneypotName) . "</label>\n"
+                    . "				<div class=\"formControls\">\n"
+                    . "					<div class=\"formBody\">\n"
+                    . "						<input type=\"text\" value=\"\" size=\"20\" name=\"form[" . ucfirst($HoneypotName) . "]\" id=\"" . ucfirst($HoneypotName) . "\" class=\"rsform-input-box\">\n"
+                    . "					</div>\n"
+                    . "				</div>\n"
+                    . "			</div>\n";
+                break;
 
 			case 'foundation':
 				$newField = '
