@@ -38,7 +38,7 @@ class plgSystemRsformhoneypot extends JPlugin
             }
 
             // Detect content within a hidden form element
-            if (!empty($_POST['form'][$data->HoneypotName]))
+            if (!empty($_POST['form'][ucfirst($data->HoneypotName)]))
             {
                 $spam = true;
             }
@@ -106,11 +106,11 @@ class plgSystemRsformhoneypot extends JPlugin
                 $newField = '
 			<div class="row rsform-block rsform-block-' . $HoneypotName . '">'
                     . '<div class="medium-3 columns">'
-                    . '<label class="formControlLabel has-tip" data-tooltip="" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="" for="' . $HoneypotName . '">'
+                    . '<label class="formControlLabel has-tip" data-tooltip="" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="" for="' . ucfirst($HoneypotName) . '">'
                     . ucfirst($HoneypotName) . '</label>'
                     . '</div>'
                     . '<div class="medium-9 columns formControls">'
-                    . '<input type="text" value="" size="20" name="form[' . $HoneypotName . ']" id="' . $HoneypotName . '" class="rsform-input-box" />'
+                    . '<input type="text" value="" size="20" name="form[' . ucfirst($HoneypotName) . ']" id="' . ucfirst($HoneypotName) . '" class="rsform-input-box" />'
                     . '</div>'
                     . '</div>';
                 break;
