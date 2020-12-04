@@ -15,7 +15,6 @@ class plgSystemRsformhoneypot extends JPlugin
 {
 	protected $autoloadLanguage = true;
 
-	public function rsfp_f_onBeforeFormValidation($args)
 	{
 		$formId = $args['formId'];
 		$data   = $this->getData($formId);
@@ -91,6 +90,7 @@ class plgSystemRsformhoneypot extends JPlugin
 		switch ($formLayoutName)
 		{
 			case 'responsive':
+    public function rsfp_f_onBeforeFormProcess($args)
                 $newField = "
 			<div class=\"rsform-block rsform-block-" . $HoneypotName . "\">\n"
                     . "				<label class=\"formControlLabel\" for=\"" . ucfirst($HoneypotName) . "\">" . ucfirst($HoneypotName) . "</label>\n"
