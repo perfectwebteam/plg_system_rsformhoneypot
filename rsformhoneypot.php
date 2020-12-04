@@ -97,7 +97,6 @@ class plgSystemRsformhoneypot extends JPlugin
 					. '<div class="formControls">'
 					. '<div class="formBody">'
 					. '<input type="text" value="" size="20" name="form[' . $HoneypotName . ']" id="' . ucfirst($HoneypotName) . '" class="rsform-input-box">'
-					. '<span class="formValidation"><span id="component' . $HoneypotName . '" class="formNoError">' . $HoneypotName . '</span></span>'
 					. '</div>'
 					. '</div>'
 					. '</div>';
