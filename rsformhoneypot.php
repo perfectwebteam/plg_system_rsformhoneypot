@@ -16,7 +16,6 @@ class plgSystemRsformhoneypot extends JPlugin
 	protected $autoloadLanguage = true;
 
 	{
-		$formId = $args['formId'];
 		$data   = $this->getData($formId);
 
 		if ((int) $data->HoneypotState === 1)
@@ -91,6 +90,7 @@ class plgSystemRsformhoneypot extends JPlugin
 		{
 			case 'responsive':
     public function rsfp_f_onBeforeFormProcess($args)
+        $formId = $args['post']['formId'];
                 $newField = "
 			<div class=\"rsform-block rsform-block-" . $HoneypotName . "\">\n"
                     . "				<label class=\"formControlLabel\" for=\"" . ucfirst($HoneypotName) . "\">" . ucfirst($HoneypotName) . "</label>\n"
