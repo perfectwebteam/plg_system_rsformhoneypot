@@ -5,13 +5,14 @@
  * @license       GPL, http://www.gnu.org/copyleft/gpl.html
  */
 
-// no direct access
+// No direct access
 defined('_JEXEC') or die('Restricted access');
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Plugin\CMSPlugin;
 
-class plgSystemRsformhoneypot extends JPlugin
+class plgSystemRsformhoneypot extends CMSPlugin
 {
     protected $autoloadLanguage = true;
 
@@ -22,7 +23,7 @@ class plgSystemRsformhoneypot extends JPlugin
 
         if ((int) $data->HoneypotState === 1)
         {
-            // https://webaim.org/blog/spam_free_accessible_forms/
+            // Https://webaim.org/blog/spam_free_accessible_forms/
             $spam = false;
 
             // Detect form elements for the most common header injections and other code
@@ -43,11 +44,11 @@ class plgSystemRsformhoneypot extends JPlugin
                 $spam = true;
             }
 
-//			// Ensure the form is posted from your server
-//			if ((isset($_SERVER['HTTP_REFERER']) && stristr($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])))
-//			{
-//				$spam = true;
-//			}
+            //          // Ensure the form is posted from your server
+            //          if ((isset($_SERVER['HTTP_REFERER']) && stristr($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])))
+            //          {
+            //              $spam = true;
+            //          }
 
             // Sent spammer to somewhere else
             if ($spam)
