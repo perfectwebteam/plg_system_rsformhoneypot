@@ -77,7 +77,7 @@ class plgSystemRsformhoneypot extends JPlugin
             return;
         }
 
-        $style    = '.rsform-block-' . $data->HoneypotName . ' {display:none!important;visibility:hidden;}';
+        $style    = '#rsform_' . $formId . '_page_0 .rsform-block-' . $data->HoneypotName . ' {display:none!important;visibility:hidden;}';
         $newField = $this->getNewfield($formLayoutName, $data->HoneypotName);
 
         $formLayout = self::str_replace_first('formSpan12">', 'formSpan12">' . "\n" . $newField, $formLayout);
