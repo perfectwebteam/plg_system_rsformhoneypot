@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="params">
+		<field
+			name="HoneypotState"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			label="PLG_SYSTEM_RSFORMHONEYPOT_FIELD_ENABLED"
+		>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field
+			name="HoneypotName"
+			type="text"
+			label="PLG_SYSTEM_RSFORMHONEYPOT_FIELD_NAME"
+		/>
+
+		<field
+			name="HoneypotUrl"
+			type="url"
+			label="PLG_SYSTEM_RSFORMHONEYPOT_FIELD_URL"
+			filter="url"
+		/>
+	</fieldset>
+</form>
