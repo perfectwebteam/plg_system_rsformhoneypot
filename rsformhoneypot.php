@@ -10,13 +10,23 @@ defined('_JEXEC') or die('Restricted access');
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Form;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\CMSPlugin;
 
 class plgSystemRsformhoneypot extends CMSPlugin
 {
+	/**
+	 * @var bool
+	 */
 	protected $autoloadLanguage = true;
 
+	/**
+	 * @param $args
+	 *
+	 *
+	 * @since 3.0.0
+	 */
 	public function onRsformFrontendBeforeFormValidation($args)
 	{
 		$formId = $args['post']['formId'];
@@ -45,11 +55,11 @@ class plgSystemRsformhoneypot extends CMSPlugin
 				$spam = true;
 			}
 
-			//          // Ensure the form is posted from your server
-			//          if ((isset($_SERVER['HTTP_REFERER']) && stristr($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])))
-			//          {
-			//              $spam = true;
-			//          }
+//          // Ensure the form is posted from your server
+//          if ((isset($_SERVER['HTTP_REFERER']) && stristr($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])))
+//          {
+//              $spam = true;
+//          }
 
 			// Sent spammer to somewhere else
 			if ($spam)
@@ -60,6 +70,15 @@ class plgSystemRsformhoneypot extends CMSPlugin
 		}
 	}
 
+	/**
+	 * @param $from
+	 * @param $to
+	 * @param $content
+	 *
+	 * @return array|string|string[]|null
+	 *
+	 * @since 3.0.0
+	 */
 	public function str_replace_first($from, $to, $content)
 	{
 		$from = '/' . preg_quote($from, '/') . '/';
@@ -67,6 +86,12 @@ class plgSystemRsformhoneypot extends CMSPlugin
 		return preg_replace($from, $to, $content, 1);
 	}
 
+	/**
+	 * @param $args
+	 *
+	 *
+	 * @since 3.0.0
+	 */
 	public function onRsformFrontendBeforeFormDisplay($args)
 	{
 		$formId         = $args['formId'];
@@ -88,6 +113,14 @@ class plgSystemRsformhoneypot extends CMSPlugin
 		RSFormProAssets::addStyleDeclaration($style);
 	}
 
+	/**
+	 * @param $formLayoutName
+	 * @param $HoneypotName
+	 *
+	 * @return string
+	 *
+	 * @since 3.0.0
+	 */
 	public function getNewField($formLayoutName, $HoneypotName)
 	{
 		switch ($formLayoutName)
@@ -124,12 +157,30 @@ class plgSystemRsformhoneypot extends CMSPlugin
 		return $newField;
 	}
 
-	public function onRsformBackendAfterShowFormScriptsTabsTab()
+	/**
+	 *
+	 *
+	 * @since 3.0.0
+	 */
+	public function onRsformBackendAfterShowFormEditTabsTab()
 	{
-		echo '<li><a href="javascript: void(0);" id="honeypot"><span class="rsficon rsficon-code"></span><span class="inner-text">Honeypot</span></a></li>';
+		echo '<li>';
+		echo HTMLHelper::_('link',
+			'javascript: void(0);',
+			'<span class="rsficon rsficon-code"></span><span class="inner-text">Honeypot</span>',
+			[
+				'id' => 'honeypot'
+			]
+		);
+		echo '</li>';
 	}
 
-	public function onRsformBackendAfterShowFormScriptsTabs()
+	/**
+	 *
+	 *
+	 * @since 3.0.0
+	 */
+	public function onRsformBackendAfterShowFormEditTabs()
 	{
 		$formId = (int) Factory::$application->input->get('formId');
 		$data   = $this->getData($formId);
@@ -159,6 +210,13 @@ class plgSystemRsformhoneypot extends CMSPlugin
 		<?php
 	}
 
+	/**
+	 * @param $formId
+	 *
+	 * @return mixed|null
+	 *
+	 * @since 3.0.0
+	 */
 	function getData($formId)
 	{
 		$db    = Factory::getDbo();
