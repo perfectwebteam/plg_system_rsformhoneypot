@@ -3,11 +3,11 @@
 	<name>plg_system_rsformhoneypot</name>
 	<author>Perfect Web Team</author>
 	<creationDate>November 2020</creationDate>
-	<copyright>(C) 2020 https://perfectwebteam.nl</copyright>
-	<license>GNU General Public License</license>
-	<authorEmail>hello@perfectwebteam.nl</authorEmail>
-	<authorUrl>perfectwebteam.nl</authorUrl>
-	<version>2.1.1</version>
+	<copyright>(C) 2020 - 2022 https://perfectwebteam.nl</copyright>
+	<license>GPLv3 http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>extensions@perfectwebteam.com</authorEmail>
+	<authorUrl>https://extensions.perfectwebteam.com</authorUrl>
+	<version>2.2.0</version>
 	<description><![CDATA[PLG_SYSTEM_RSFORMHONEYPOT_XML_DESCRIPTION]]></description>
 
 	<files>
@@ -16,6 +16,15 @@
 		<filename plugin="rsformhoneypot">rsformhoneypot.php</filename>
 		<folder>language</folder>
 	</files>
+
+	<administration>
+		<languages folder="language">
+			<language tag="en-GB">plg_system_rsformdeletesubmissions.ini</language>
+			<language tag="en-GB">plg_system_rsformdeletesubmissions.sys.ini</language>
+			<language tag="nl-NL">plg_system_rsformdeletesubmissions.ini</language>
+			<language tag="nl-NL">plg_system_rsformdeletesubmissions.sys.ini</language>
+		</languages>
+	</administration>
 
 	<install>
 		<sql>
